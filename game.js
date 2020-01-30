@@ -89,6 +89,8 @@ function inviteTheDog() {
     <img
     src="https://i.dlpng.com/static/png/6560668_thumb.png"
     alt="" class="my-img img-fluid">
+
+    <h5 class="text-danger">It's over now. ${goofy.name} will never come back!</h5>
   
   `)
   alert("You're literally the Worst!");
