@@ -11,10 +11,9 @@ let items = {
   kaboom: { name: 'Kaboom', modifier: 9, description: 'Extra Pow' }
 }
 
-
+let screenSay = "";
 
 function slap() {
-  giveFire()
   if (goofy.health > 0) {
     goofy.hits++
   }
@@ -44,8 +43,9 @@ function kick() {
 }
 
 
-function giveFire() {
-  goofy.inventory.push(items.fire);
+function giveThing(itemName) {
+  goofy.inventory.push(items[itemName]);
+  screenSay = items[itemName].description;
 }
 
 function addMods() {
@@ -53,7 +53,6 @@ function addMods() {
   for (let i = 0; i < goofy.inventory.length; i++) {
     combVal += goofy.inventory[i].modifier;
   }
-  console.log(combVal);
 
   return combVal;
 }
@@ -65,5 +64,8 @@ function update() {
     goofy.health = 0;
   }
   document.getElementById("health").innerText = (`${goofy.name} is feeling ${goofy.health}% because he's been hit ${goofy.hits} times!`)
+
+  document.getElementById("saying").innerText = (`${screenSay}`)
 }
+
 update()
