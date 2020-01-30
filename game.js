@@ -1,5 +1,5 @@
 let goofy = {
-  name: "Goofy",
+  name: "Mirabelle",
   health: 0,
   hits: 0,
   inventory: []
@@ -19,7 +19,7 @@ function slap() {
   }
   goofy.health += 1 + addMods();
 
-  useThing()
+  //useThing()
   //alert(health);
   update()
 }
@@ -30,7 +30,7 @@ function punch() {
     goofy.hits++
   }
   goofy.health += 5 + addMods();
-  useThing()
+  //useThing()
   update()
 }
 
@@ -40,7 +40,7 @@ function kick() {
     goofy.hits++
   }
   goofy.health += 10 + addMods();
-  useThing()
+  //useThing()
   update()
 }
 
@@ -66,16 +66,17 @@ function addMods() {
 
 
 function update() {
-  if (goofy.health < 0) {
-    goofy.health = 0;
+  if (goofy.health > 1000) {
+    goofy.health = 1000;
+    goofy.hits--
   }
-  document.getElementById("health").innerText = (`${goofy.name} is feeling ${goofy.health}% because he's been hit ${goofy.hits} times!`)
+  document.getElementById("health").innerText = (`${goofy.name} is feeling ${goofy.health}% Special! Thank you for your ${goofy.hits} loving contributions!`)
 
-  document.getElementById("saying").innerText = (`${screenSay}`)
+  //document.getElementById("saying").innerText = (`${screenSay}`)
 
 
   if (goofy.inventory.length == 0) {
-    screenSay = "Plain and Simple"
+    //screenSay = "Plain and Simple"
   }
 
 
@@ -90,6 +91,7 @@ function inviteTheDog() {
     alt="" class="my-img img-fluid">
   
   `)
+  alert("You're literally the Worst!");
 }
 
 update()
