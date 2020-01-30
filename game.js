@@ -1,6 +1,6 @@
 let goofy = {
   name: "Goofy",
-  health: 100,
+  health: 0,
   hits: 0,
   inventory: []
 }
@@ -17,7 +17,7 @@ function slap() {
   if (goofy.health > 0) {
     goofy.hits++
   }
-  goofy.health -= 1 + addMods();
+  goofy.health += 1 + addMods();
 
   useThing()
   //alert(health);
@@ -29,7 +29,7 @@ function punch() {
   if (goofy.health > 0) {
     goofy.hits++
   }
-  goofy.health -= 5 + addMods();
+  goofy.health += 5 + addMods();
   useThing()
   update()
 }
@@ -39,7 +39,7 @@ function kick() {
   if (goofy.health > 0) {
     goofy.hits++
   }
-  goofy.health -= 10 + addMods();
+  goofy.health += 10 + addMods();
   useThing()
   update()
 }
@@ -73,9 +73,23 @@ function update() {
 
   document.getElementById("saying").innerText = (`${screenSay}`)
 
+
   if (goofy.inventory.length == 0) {
     screenSay = "Plain and Simple"
   }
+
+
+}
+
+function inviteTheDog() {
+  document.getElementById("error").innerHTML = (`
+    <h3 class="text-danger"> Never Invite the Dog! </h3>
+
+    <img
+    src="https://i.dlpng.com/static/png/6560668_thumb.png"
+    alt="" class="my-img img-fluid">
+  
+  `)
 }
 
 update()

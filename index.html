@@ -12,36 +12,42 @@
 
   <link rel="stylesheet" href="game.css">
 
-  <title>Slap Game</title>
+  <title>Slap on Kindness Game</title>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <header class="row">
-      <div class="col-12">
+  <div class="container-fluid bg-dark">
+    <header class="row bg-dark text-light">
+      <div class="col-12 text-center">
+        <h1 id="name"> Nice Kitty </h1>
         <span><span id="health">--</span></span>
       </div>
     </header>
     <main class="row">
-      <div class="col-12">
-        <img src="https://newlife919blog.blogs.com/photos/uncategorized/2008/05/15/goofy.gif" alt="" class="my-img">
+      <div class="col-12 text-center" id="error">
+        <img
+          src="https://cdn.clipart.email/4432a1fa8962b9b3af97b1e47532d1c4_christmas-kitten-clipart-free-clipart-images-image-clipartix_479-762.png"
+          alt="" class="my-img img-fluid">
       </div>
 
     </main>
     <footer class="row">
-      <div class="col-12">
-        <button class="btn btn-danger" onclick="slap()">Slap</button>
-        <button class="btn btn-danger" onclick="punch()">Punch</button>
-        <button class="btn btn-danger" onclick="kick()">Kick</button>
+      <div class="col-12 text-center p-1">
+        <button class="btn btn-primary" onclick="slap()">Compliment</button>
+        <button class="btn btn-primary" onclick="punch()">Pet</button>
+        <button class="btn btn-primary" onclick="kick()"> Love</button>
       </div>
-      <div class="col-12">
-        <button class="btn btn-success" onclick="giveThing('fire')">Fire</button>
-        <button class="btn btn-success" onclick="giveThing('mantis')">Mantis</button>
-        <button class="btn btn-success" onclick="giveThing('kaboom')">Kaboom</button>
+      <div class="col-12 text-center p-1">
+        <button class="btn btn-info" onclick="giveThing('fire')">Feed Treat</button>
+        <button class="btn btn-info" onclick="giveThing('mantis')">Use Smooshy Voice</button>
+        <button class="btn btn-info" onclick="inviteTheDog()">Invite the Dog</button>
       </div>
       <div class="col-12" id="saying">
+        <div class="col-12"></div>
+        <br>
 
       </div>
+      <br>
     </footer>
 
 
