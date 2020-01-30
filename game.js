@@ -19,6 +19,7 @@ function slap() {
   }
   goofy.health -= 1 + addMods();
 
+  useThing()
   //alert(health);
   update()
 }
@@ -29,6 +30,7 @@ function punch() {
     goofy.hits++
   }
   goofy.health -= 5 + addMods();
+  useThing()
   update()
 }
 
@@ -38,7 +40,7 @@ function kick() {
     goofy.hits++
   }
   goofy.health -= 10 + addMods();
-
+  useThing()
   update()
 }
 
@@ -46,6 +48,10 @@ function kick() {
 function giveThing(itemName) {
   goofy.inventory.push(items[itemName]);
   screenSay = items[itemName].description;
+}
+
+function useThing() {
+  goofy.inventory = [];
 }
 
 function addMods() {
@@ -66,6 +72,10 @@ function update() {
   document.getElementById("health").innerText = (`${goofy.name} is feeling ${goofy.health}% because he's been hit ${goofy.hits} times!`)
 
   document.getElementById("saying").innerText = (`${screenSay}`)
+
+  if (goofy.inventory.length == 0) {
+    screenSay = "Plain and Simple"
+  }
 }
 
 update()
